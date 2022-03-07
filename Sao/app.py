@@ -6,11 +6,14 @@ from common.url_router import url_wrapper, include
 class Application(web.Application):
     def __init__(self):
         handlers = url_wrapper([
-            (r'/users/', include('views.users.users_urls'))
+            (r'/login/', include('views.login.login_urls')),
+            (r'/users/', include('views.users.users_urls')),
+            (r'/common/', include('views.common.common_urls')),
         ])
         settings = dict(
             debug=True,
             static_path=path.join(path.dirname(__file__), 'static'),
-            template_path=path.join(path.dirname(__file__), 'templates')
+            template_path=path.join(path.dirname(__file__), 'templates'),
+            cookie_secret='cookie_secret_sf',
         )
         super().__init__(handlers, **settings)
