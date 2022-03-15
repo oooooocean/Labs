@@ -7,7 +7,7 @@ class Application(web.Application):
     def __init__(self):
         handlers = url_wrapper([
             (r'/login/', include('views.login.login_urls')),
-            (r'/users/', include('views.users.users_urls')),
+            (r'/user/', include('views.users.user_urls')),
             (r'/common/', include('views.common.common_urls')),
         ])
         settings = dict(

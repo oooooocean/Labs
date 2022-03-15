@@ -1,0 +1,242 @@
+2022-03-11 11:39:51,320 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 21, in post
+    user_info: UserInfo = self.current_user.info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 11:39:51,339 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 20.30ms
+2022-03-11 11:40:17,890 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 17, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+2022-03-11 11:40:17,910 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 20.89ms
+2022-03-11 11:41:18,322 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 21, in post
+    user_info: UserInfo = self.current_user.info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 11:41:18,328 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 6.51ms
+2022-03-11 11:43:35,349 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 27, in post
+    if args['gender']:
+KeyError: 'gender'
+2022-03-11 11:43:35,361 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 19.63ms
+2022-03-11 11:44:56,878 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 25, in post
+    if hasattr('nickname'):
+TypeError: hasattr expected 2 arguments, got 1
+2022-03-11 11:44:56,896 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 24.30ms
+2022-03-11 11:49:03,976 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 33, in post
+    image_mates = self.request.files['image']
+KeyError: 'image'
+2022-03-11 11:49:03,979 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 7.05ms
+2022-03-11 11:49:25,089 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.current_user.info = user_info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 11:49:25,101 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 16.02ms
+2022-03-11 13:40:47,555 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.current_user.info = user_info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 13:40:47,559 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 8.96ms
+2022-03-11 13:41:40,854 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 18, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+2022-03-11 13:41:40,874 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 20.74ms
+2022-03-11 13:48:57,341 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.current_user.info = user_info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 13:48:57,359 web.py[line:1197] ERROR Cannot send error response after headers written
+2022-03-11 13:58:29,924 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1054, "Unknown column 'user_info.nickname' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 22, in post
+    user_info: UserInfo = self.current_user.info
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 481, in __get__
+    return self.impl.get(state, dict_)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 941, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 977, in _fire_loader_callables
+    return self.callable_(state, passive)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 911, in _load_for_state
+    return self._emit_lazyload(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 1047, in _emit_lazyload
+    result = session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'user_info.nickname' in 'field list'")
+[SQL: SELECT user_info.id AS user_info_id, user_info.nickname AS user_info_nickname, user_info.gender AS user_info_gender, user_info.avatar AS user_info_avatar, user_info.user_id AS user_info_user_id 
+FROM user_info 
+WHERE %s = user_info.user_id]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-03-11 13:58:29,943 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 136.16ms
+2022-03-11 14:47:30,184 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.ProgrammingError: (1146, "Table 'sao.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 38, in prepare
+    self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2810, in first
+    return self.limit(1)._iter().first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.ProgrammingError: (MySQLdb._exceptions.ProgrammingError) (1146, "Table 'sao.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.phone AS user_phone, user.create_time AS user_create_time 
+FROM user 
+WHERE user.id = %s 
+ LIMIT %s]
+[parameters: (1, 1)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2022-03-11 14:47:30,234 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 73.48ms
+2022-03-11 14:52:49,169 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.current_user.info = user_info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 14:52:49,176 web.py[line:1197] ERROR Cannot send error response after headers written
+2022-03-11 14:55:50,588 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.current_user.info = user_info
+AttributeError: 'NoneType' object has no attribute 'info'
+2022-03-11 14:55:50,598 web.py[line:1197] ERROR Cannot send error response after headers written
+2022-03-11 15:00:06,874 web.py[line:1789] ERROR Uncaught exception POST /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 28, in post
+    user_info.nickname = args['nickname']
+AttributeError: 'NoneType' object has no attribute 'nickname'
+2022-03-11 15:00:06,892 web.py[line:2239] ERROR 500 POST /user/ (127.0.0.1) 40.44ms
