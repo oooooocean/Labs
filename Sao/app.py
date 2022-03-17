@@ -8,6 +8,7 @@ class Application(web.Application):
         handlers = url_wrapper([
             (r'/login/', include('views.login.login_urls')),
             (r'/user/', include('views.users.user_urls')),
+            (r'/album/', include('views.album.album_urls')),
             (r'/common/', include('views.common.common_urls')),
         ])
         settings = dict(

@@ -117,3 +117,1073 @@ Traceback (most recent call last):
     if len(users) > 0:
 TypeError: object of type 'Query' has no len()
 2022-03-15 16:54:51,214 web.py[line:2239] ERROR 500 GET /user/?uid=2 (127.0.0.1) 102.70ms
+2022-03-16 10:27:21,891 web.py[line:1789] ERROR Uncaught exception POST /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 21, in post
+    album = Album(name=name, user_id=self.current_user.id, create_time=int(time()))
+AttributeError: 'NoneType' object has no attribute 'id'
+2022-03-16 10:27:21,912 web.py[line:2239] ERROR 500 POST /album/ (127.0.0.1) 22.80ms
+2022-03-16 10:38:53,778 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 56, in post
+    album.photos.append(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1169, in append
+    item = __set(self, item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1134, in __set
+    item = executor.fire_append_event(item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 753, in fire_append_event
+    return self.attr.fire_append_event(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1429, in fire_append_event
+    value = fn(state, value, initiator or self._append_token)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 56, in append
+    item_state = attributes.instance_state(item)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+2022-03-16 10:38:53,787 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 238.90ms
+2022-03-16 10:42:29,783 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 56, in post
+    album.photos.append(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1169, in append
+    item = __set(self, item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1134, in __set
+    item = executor.fire_append_event(item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 753, in fire_append_event
+    return self.attr.fire_append_event(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1429, in fire_append_event
+    value = fn(state, value, initiator or self._append_token)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 56, in append
+    item_state = attributes.instance_state(item)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+2022-03-16 10:42:29,792 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 99.72ms
+2022-03-16 10:45:52,428 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 58, in post
+    album.photos.append(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1169, in append
+    item = __set(self, item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1134, in __set
+    item = executor.fire_append_event(item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 753, in fire_append_event
+    return self.attr.fire_append_event(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1429, in fire_append_event
+    value = fn(state, value, initiator or self._append_token)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 56, in append
+    item_state = attributes.instance_state(item)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+2022-03-16 10:45:52,434 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 101.41ms
+2022-03-16 10:46:19,351 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 59, in post
+    album.photos.append(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1169, in append
+    item = __set(self, item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1134, in __set
+    item = executor.fire_append_event(item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 753, in fire_append_event
+    return self.attr.fire_append_event(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1429, in fire_append_event
+    value = fn(state, value, initiator or self._append_token)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 56, in append
+    item_state = attributes.instance_state(item)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+2022-03-16 10:46:19,359 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 93.35ms
+2022-03-16 10:54:18,895 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2599, in add
+    state = attributes.instance_state(instance)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 56, in post
+    sessions.add(photos)
+  File "<string>", line 2, in add
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2601, in add
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.list' is not mapped
+2022-03-16 10:54:18,902 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 118.81ms
+2022-03-16 10:55:11,670 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 57, in post
+    album.photos.append(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1169, in append
+    item = __set(self, item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 1134, in __set
+    item = executor.fire_append_event(item, _sa_initiator)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/collections.py", line 753, in fire_append_event
+    return self.attr.fire_append_event(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1429, in fire_append_event
+    value = fn(state, value, initiator or self._append_token)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 56, in append
+    item_state = attributes.instance_state(item)
+AttributeError: 'list' object has no attribute '_sa_instance_state'
+2022-03-16 10:55:11,679 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 136.26ms
+2022-03-16 10:59:49,366 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 40, in post
+    if not Album.query.filter(Album.id == album_id).exists():
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 582, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2022-03-16 10:59:49,373 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 58.55ms
+2022-03-16 11:00:27,779 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 41, in post
+    if not result:
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 582, in __bool__
+    raise TypeError("Boolean value of this clause is not defined")
+TypeError: Boolean value of this clause is not defined
+2022-03-16 11:00:27,788 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 80.07ms
+2022-03-16 11:25:16,412 web.py[line:1789] ERROR Uncaught exception GET /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 17, in get
+    self.http_response(ERROR_CODE_0, albums)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Query is not JSON serializable
+2022-03-16 11:25:16,435 web.py[line:2239] ERROR 500 GET /album/ (127.0.0.1) 101.57ms
+2022-03-16 11:25:29,479 web.py[line:1789] ERROR Uncaught exception GET /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 17, in get
+    self.http_response(ERROR_CODE_0, albums)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Album is not JSON serializable
+2022-03-16 11:25:29,494 web.py[line:2239] ERROR 500 GET /album/ (127.0.0.1) 79.14ms
+2022-03-16 11:25:57,559 web.py[line:1789] ERROR Uncaught exception GET /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 17, in get
+    self.http_response(ERROR_CODE_0, albums)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Album is not JSON serializable
+2022-03-16 11:25:57,562 web.py[line:2239] ERROR 500 GET /album/ (127.0.0.1) 18.43ms
+2022-03-16 11:26:30,894 web.py[line:1789] ERROR Uncaught exception GET /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 18, in get
+    self.http_response(ERROR_CODE_0, albums)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Album is not JSON serializable
+2022-03-16 11:26:30,903 web.py[line:2239] ERROR 500 GET /album/ (127.0.0.1) 80.02ms
+2022-03-16 11:35:58,763 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 101, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:35:58,770 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 81.91ms
+2022-03-16 11:37:07,623 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 101, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:37:07,638 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 34.48ms
+2022-03-16 11:37:30,398 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 102, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:37:30,405 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 82.82ms
+2022-03-16 11:38:00,487 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 103, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:38:00,492 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 71.96ms
+2022-03-16 11:39:04,129 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 95, in get
+    album_ids = args.get('album_ids', None).split(',')
+AttributeError: 'list' object has no attribute 'split'
+2022-03-16 11:39:04,134 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 90.38ms
+2022-03-16 11:39:43,192 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 95, in get
+    album_ids = args.get('album_ids', None).split(',')
+AttributeError: 'list' object has no attribute 'split'
+2022-03-16 11:39:43,206 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 18.23ms
+2022-03-16 11:39:56,224 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 103, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:39:56,231 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 90.22ms
+2022-03-16 11:46:18,853 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 109, in get
+    self.http_response(ERROR_CODE_0, result)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 13, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+TypeError: keys must be str, int, float, bool or None, not bytes
+2022-03-16 11:46:18,865 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 198.81ms
+2022-03-16 11:47:35,294 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 107, in get
+    result = {album_id.encode('utf-8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 107, in <dictcomp>
+    result = {album_id.encode('utf-8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'bytes' object has no attribute 'encode'
+2022-03-16 11:47:35,301 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 61.97ms
+2022-03-16 16:22:51,826 web.py[line:1789] ERROR Uncaught exception POST /album/?id=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/?id=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 33, in post
+    args = json_decode(self.get_body_argument())
+TypeError: get_body_argument() missing 1 required positional argument: 'name'
+2022-03-16 16:22:51,838 web.py[line:2239] ERROR 500 POST /album/?id=1 (127.0.0.1) 21.80ms
+2022-03-16 16:23:40,251 web.py[line:1789] ERROR Uncaught exception POST /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 33, in post
+    print(self.get_body_argument())
+TypeError: get_body_argument() missing 1 required positional argument: 'name'
+2022-03-16 16:23:40,256 web.py[line:2239] ERROR 500 POST /album/ (127.0.0.1) 71.47ms
+2022-03-17 09:39:55,207 web.py[line:1789] ERROR Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 15, in prepare
+    self.json_args = json_decode(self.request.body)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/escape.py", line 83, in json_decode
+    return json.loads(to_basestring(value))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-03-17 09:39:55,213 web.py[line:2239] ERROR 500 POST /login/ (127.0.0.1) 8.29ms
+2022-03-17 09:40:26,700 web.py[line:1789] ERROR Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 16, in prepare
+    self.json_args = json_decode(self.request.body)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/escape.py", line 83, in json_decode
+    return json.loads(to_basestring(value))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-03-17 09:40:26,711 web.py[line:2239] ERROR 500 POST /login/ (127.0.0.1) 14.49ms
+2022-03-17 09:43:12,072 web.py[line:1789] ERROR Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 25, in post
+    phone = self.json_args.get('phone', None)
+AttributeError: 'NoneType' object has no attribute 'get'
+2022-03-17 09:43:12,091 web.py[line:2239] ERROR 500 POST /login/ (127.0.0.1) 18.93ms
+2022-03-17 10:25:14,022 web.py[line:1789] ERROR Uncaught exception POST /user/?uid=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/?uid=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1702, in _execute_context
+    context = constructor(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1070, in _init_compiled
+    param = [
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1071, in <listcomp>
+    processors[key](compiled_params[key])
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/sqltypes.py", line 1754, in process
+    value = self._db_value_for_elem(value)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/sqltypes.py", line 1614, in _db_value_for_elem
+    return self._valid_lookup[elem]
+TypeError: unhashable type: 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 35, in post
+    self.current_user.save()
+  File "/Users/qiangchen/Desktop/Labs/Sao/models/base_model.py", line 34, in save
+    sessions.commit()
+  File "<string>", line 2, in commit
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
+    _emit_update_statements(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1000, in _emit_update_statements
+    c = connection._execute_20(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1708, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1702, in _execute_context
+    context = constructor(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1070, in _init_compiled
+    param = [
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1071, in <listcomp>
+    processors[key](compiled_params[key])
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/sqltypes.py", line 1754, in process
+    value = self._db_value_for_elem(value)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/sqltypes.py", line 1614, in _db_value_for_elem
+    return self._valid_lookup[elem]
+sqlalchemy.exc.StatementError: (builtins.TypeError) unhashable type: 'list'
+[SQL: UPDATE user_info SET nickname=%s, gender=%s WHERE user_info.id = %s]
+[parameters: [{'gender': [], 'nickname': [], 'user_info_id': 1}]]
+2022-03-17 10:25:14,060 web.py[line:2239] ERROR 500 POST /user/?uid=1 (127.0.0.1) 92.30ms
+2022-03-17 10:35:07,522 web.py[line:1789] ERROR Uncaught exception POST /user/?uid=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/?uid=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 38, in post
+    self.http_response(conf.base.ERROR_CODE_0, json)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Gender is not JSON serializable
+2022-03-17 10:35:07,549 web.py[line:2239] ERROR 500 POST /user/?uid=1 (127.0.0.1) 82.68ms
+2022-03-17 10:36:04,535 web.py[line:1789] ERROR Uncaught exception POST /user/?uid=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/user/?uid=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/users/user_views.py", line 39, in post
+    self.http_response(conf.base.ERROR_CODE_0, json)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Gender is not JSON serializable
+2022-03-17 10:36:04,541 web.py[line:2239] ERROR 500 POST /user/?uid=1 (127.0.0.1) 60.59ms
+2022-03-17 10:59:13,237 web.py[line:1789] ERROR Uncaught exception PUT /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='PUT', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 60, in put
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 10:59:53,386 web.py[line:1789] ERROR Uncaught exception PUT /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='PUT', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 60, in put
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:00:18,569 web.py[line:1789] ERROR Uncaught exception PUT /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='PUT', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 62, in put
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:01:00,507 web.py[line:1789] ERROR Uncaught exception PUT /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='PUT', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 55, in put
+    print(exist.name)
+AttributeError: 'NoneType' object has no attribute 'name'
+2022-03-17 11:01:00,511 web.py[line:2239] ERROR 500 PUT /album/ (127.0.0.1) 89.12ms
+2022-03-17 11:01:10,419 web.py[line:1789] ERROR Uncaught exception PUT /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='PUT', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 60, in put
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:02:26,705 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:02:26,727 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 64.49ms
+2022-03-17 11:02:32,079 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:02:32,080 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=1 (127.0.0.1) 3.90ms
+2022-03-17 11:02:42,073 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:02:42,087 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 18.17ms
+2022-03-17 11:02:47,744 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:02:47,762 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 20.07ms
+2022-03-17 11:03:05,902 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:03:05,924 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 107.76ms
+2022-03-17 11:03:21,983 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in get
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 85, in <dictcomp>
+    result = {album_id.decode('utf8'): [photo.to_json() for photo in Photo.query.filter(Photo.album_id == album_id).all()]
+AttributeError: 'str' object has no attribute 'decode'
+2022-03-17 11:03:21,988 web.py[line:2239] ERROR 500 GET /album/photo/?album_ids=[1] (127.0.0.1) 39.30ms
+2022-03-17 11:03:39,285 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 88, in get
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:03:55,477 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=[1] (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=[1]', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 89, in get
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:05:11,321 web.py[line:1789] ERROR Uncaught exception GET /album/photo/?album_ids=1&album_ids=2 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/album/photo/?album_ids=1&album_ids=2', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 89, in get
+    self.http_response(ERROR_CODE_1001)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 26, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1124, in finish
+    raise RuntimeError("finish() called twice")
+RuntimeError: finish() called twice
+2022-03-17 11:08:19,066 web.py[line:1789] ERROR Uncaught exception DELETE /album/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='DELETE', uri='/album/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`sao`.`photo`, CONSTRAINT `photo_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `album` (`id`))')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 69, in delete
+    Album.query.filter(Album.id == album_id).delete()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 3191, in delete
+    result = self.session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.IntegrityError: (MySQLdb._exceptions.IntegrityError) (1451, 'Cannot delete or update a parent row: a foreign key constraint fails (`sao`.`photo`, CONSTRAINT `photo_ibfk_1` FOREIGN KEY (`album_id`) REFERENCES `album` (`id`))')
+[SQL: DELETE FROM album WHERE album.id = %s]
+[parameters: (1,)]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2022-03-17 11:08:19,104 web.py[line:2239] ERROR 500 DELETE /album/ (127.0.0.1) 129.72ms
+2022-03-17 11:26:35,653 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 107, in post
+    Photo.saveAll(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/models/base_model.py", line 56, in saveAll
+    sessions.addAll(objs)
+AttributeError: 'scoped_session' object has no attribute 'addAll'
+2022-03-17 11:26:35,693 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 126.89ms
+2022-03-17 11:36:10,904 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1205, 'Lock wait timeout exceeded; try restarting transaction')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/album/album_views.py", line 107, in post
+    Photo.saveAll(photos)
+  File "/Users/qiangchen/Desktop/Labs/Sao/models/base_model.py", line 57, in saveAll
+    sessions.commit()
+  File "<string>", line 2, in commit
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 244, in save_obj
+    _emit_insert_statements(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1221, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1614, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1481, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 206, in execute
+    res = self._query(query)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/cursors.py", line 319, in _query
+    db.query(q)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/MySQLdb/connections.py", line 254, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[SQL: INSERT INTO photo (name, create_time, album_id) VALUES (%s, %s, %s)]
+[parameters: ('cnlogo8gafewo3bbi1.png', 1647488119, 1)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2022-03-17 11:36:10,934 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 51345.56ms
+2022-03-17 11:36:10,951 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 54, in prepare
+    self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2810, in first
+    return self.limit(1)._iter().first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1691, in execute
+    conn = self._connection_for_bind(bind)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1532, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 721, in _connection_for_bind
+    self._assert_active()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (MySQLdb._exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[SQL: INSERT INTO photo (name, create_time, album_id) VALUES (%s, %s, %s)]
+[parameters: ('cnlogo8gafewo3bbi1.png', 1647488119, 1)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-03-17 11:36:10,954 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 7.25ms
+2022-03-17 11:37:22,572 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 54, in prepare
+    self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2810, in first
+    return self.limit(1)._iter().first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1691, in execute
+    conn = self._connection_for_bind(bind)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1532, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 721, in _connection_for_bind
+    self._assert_active()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (MySQLdb._exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[SQL: INSERT INTO photo (name, create_time, album_id) VALUES (%s, %s, %s)]
+[parameters: ('cnlogo8gafewo3bbi1.png', 1647488119, 1)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-03-17 11:37:22,575 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 5.25ms
+2022-03-17 11:37:39,989 web.py[line:1789] ERROR Uncaught exception POST /album/photo/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/album/photo/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 54, in prepare
+    self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2810, in first
+    return self.limit(1)._iter().first()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1691, in execute
+    conn = self._connection_for_bind(bind)
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1532, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 721, in _connection_for_bind
+    self._assert_active()
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (MySQLdb._exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction')
+[SQL: INSERT INTO photo (name, create_time, album_id) VALUES (%s, %s, %s)]
+[parameters: ('cnlogo8gafewo3bbi1.png', 1647488119, 1)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+2022-03-17 11:37:40,007 web.py[line:2239] ERROR 500 POST /album/photo/ (127.0.0.1) 19.26ms
+2022-03-17 16:09:42,920 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 47, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 51, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:09:42,931 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 16.27ms
+2022-03-17 16:10:10,809 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 48, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 52, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:10:10,830 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 22.04ms
+2022-03-17 16:11:13,058 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 48, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 52, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:11:13,064 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 6.81ms
+2022-03-17 16:11:39,258 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 49, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 53, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:11:39,278 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 20.51ms
+2022-03-17 16:12:04,374 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 49, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 53, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:12:04,379 web.py[line:1219] ERROR Uncaught exception in write_error
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 49, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 53, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1217, in send_error
+    self.write_error(status_code, **kwargs)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 40, in write_error
+    self.http_response(exc_info)
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 30, in http_response
+    self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+AttributeError: 'tuple' object has no attribute 'msg'
+2022-03-17 16:12:04,380 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 7.43ms
+2022-03-17 16:12:27,720 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 50, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 54, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:12:27,734 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 14.07ms
+2022-03-17 16:12:46,443 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 47, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 51, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:12:46,462 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 20.02ms
+2022-03-17 16:14:07,729 web.py[line:1789] ERROR Uncaught exception GET /user/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/user/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 47, in prepare
+    jwt_string = self.request.headers['Authorization']
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/httputil.py", line 216, in __getitem__
+    return self._dict[_normalize_header(name)]
+KeyError: 'Authorization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1681, in _execute
+    result = self.prepare()
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/base/base_views.py", line 54, in prepare
+    raise ERROR_CODE_1000
+common.exception.SaoException: ('Authorization 缺失', 1000)
+2022-03-17 16:14:07,751 web.py[line:2239] ERROR 500 GET /user/ (127.0.0.1) 22.77ms

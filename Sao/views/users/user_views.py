@@ -1,44 +1,40 @@
-from tornado.escape import json_decode, json_encode
-
-import conf.base
-from common.utils import save_images
-from conf.db import sessions
-from models.gender import Gender
+from service.utils import save_images
 from models.user_model import UserInfo, User
 from views.base.base_views import AuthBaseHandler
-from sqlalchemy.orm import Query
+from common.exception import (
+    ERROR_CODE_0,
+)
 
 
 class UserHandler(AuthBaseHandler):
 
     def get(self):
+        """
+        获取用户的基本信息
+        :return:
+        """
         user = self.current_user
         uid = self.request.arguments.get('uid', None)
         if uid:
             user = User.query.filter_by(id=uid).first()
-        if user is None:
-            return self.http_response(conf.base.ERROR_CODE_1001)
-        return self.http_response(conf.base.ERROR_CODE_0, user.to_json())
+        return self.http_response(ERROR_CODE_0, user.to_json())
 
     def post(self):
-        # TODO: 验证
-        args = json_decode(self.request.body)
+        """
+        修改用户信息
+        :return:
+        """
         user_info: UserInfo = self.current_user.info
         if not user_info:
             user_info = UserInfo()
-
-        for key, value in args.items():
-            if key == 'nickname':
-                user_info.nickname = args['nickname']
-            elif key == 'gender':
-                user_info.gender = Gender(args['gender'])
-
-        try:
-            image_mates = self.request.files['image']
+        user_info.nickname = self.get_body_argument('nickname', user_info.nickname)
+        user_info.gender = self.get_body_argument('gender', user_info.gender)
+        image_mates = self.request.files.get('image', None)
+        if image_mates:
             user_info.avatar = save_images(image_mates)[0]
-        except KeyError:
-            pass
 
         self.current_user.info = user_info
-        sessions.commit()
-        sessions.close()
+        self.current_user.save()
+        json = self.current_user.to_json()
+        json['info'] = self.current_user.info.to_json()
+        self.http_response(ERROR_CODE_0, json)

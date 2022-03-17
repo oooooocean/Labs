@@ -9,6 +9,8 @@ def save_images(image_metas) -> [str]:
     :param image_metas: 图片元数据
     :return: 图片的完整link
     """
+    if len(image_metas) == 0:
+        return []
     cwd = os.getcwd()
     save_image_path = os.path.join(cwd, 'static/upload/')
     file_name_list = save_files(image_metas, save_image_path)
@@ -23,3 +25,10 @@ def camel_case(string: str) -> str:
     from re import sub
     string = sub(r'(_|-)+', ' ', string).title().replace(' ', '')
     return string[0].lower() + string[1:]
+
+
+def check_code(code):
+    """
+    检查验证码
+    """
+    return code == '123456'

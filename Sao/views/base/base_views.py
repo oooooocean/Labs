@@ -1,16 +1,43 @@
 from tornado.web import RequestHandler
 from models.user_model import User
-import conf.base
 import json
 from common.jwt_utils import JWTUtils
-import time
-from conf.base import ERROR_CODE_0
+from common.exception import (
+    ERROR_CODE_0,
+    ERROR_CODE_1000,
+    ERROR_CODE_1003,
+    ERROR_CODE_1004,
+    SaoException
+)
 import jwt
+from tornado.escape import json_decode
 
 
 class BaseHandler(RequestHandler):
-    def http_response(self, error: conf.base.ErrorCode, data=None):
+    def prepare(self):
+        if self.request.headers.get('Content-Type', '').startswith('application/json'):
+            self.json_args = json_decode(self.request.body)
+        else:
+            self.json_args = None
+
+    def http_response(self, error: SaoException, data=None):
+        """
+        响应
+        :param error: 错误码
+        :param data: 数据体
+        :return:
+        """
         self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
+
+    def success(self, data):
+        self.finish(json.dumps({'msg': ERROR_CODE_0.msg, 'code': ERROR_CODE_0.code, 'data': data}))
+
+    def write_error(self, status_code: int, **kwargs) -> None:
+        exc_info = kwargs.get('exc_info', None)
+        if exc_info[0] is SaoException:
+            self.http_response(exc_info[1])
+            return
+        super().write_error(status_code, **kwargs)
 
 
 class AuthBaseHandler(BaseHandler):
@@ -18,27 +45,12 @@ class AuthBaseHandler(BaseHandler):
     def prepare(self):
         try:
             jwt_string = self.request.headers['Authorization']
-        except KeyError:
-            self.http_response(conf.base.ERROR_CODE_1000)
-            return
-
-        try:
             jwtPayload = JWTUtils.parse(jwt_string)
+            self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
+            assert self.current_user
         except jwt.exceptions.ExpiredSignatureError:
-            self.http_response(conf.base.ERROR_CODE_1003)
-            return
-
-        if not jwtPayload.uid or not jwtPayload.exp:
-            self.http_response(conf.base.ERROR_CODE_1000)
-            return
-
-        # 检查 token 是否过期
-        if jwtPayload.exp <= time.time():
-            self.http_response(conf.base.ERROR_CODE_1003)
-            return
-
-        # 检查用户
-        self.current_user = User.query.filter(User.id == jwtPayload.uid).first()
-        if not self.current_user:
-            self.http_response(conf.base.ERROR_CODE_1004)
-            return
+            raise ERROR_CODE_1003
+        except Exception:
+            raise ERROR_CODE_1000
+        else:
+            super(AuthBaseHandler, self).prepare()

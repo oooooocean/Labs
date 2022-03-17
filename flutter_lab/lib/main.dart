@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_lab/animate_lab/animate_01_text.dart';
 import 'package:flutter_lab/animate_lab/animate_02_typer.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PageStorageKey
+    KeepAlive
     return MaterialApp(
       title: 'Flutter Lab',
       theme: ThemeData(primarySwatch: Colors.blue, scaffoldBackgroundColor: Colors.white),

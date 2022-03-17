@@ -19,7 +19,7 @@ class Album(conf.db.BaseDB, ModelMixin):
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship('User', back_populates='albums')
 
-    photos = relationship('Photo', back_populates='album')
+    photos = relationship('Photo', back_populates='album', uselist=True)
 
 
 class Photo(conf.db.BaseDB, ModelMixin):

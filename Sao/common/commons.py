@@ -1,6 +1,3 @@
-import json
-from tornado.web import RequestHandler
-from conf.base import ErrorCode
 import os
 
 
