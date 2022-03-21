@@ -1,8 +1,10 @@
 from service.utils import save_images
 from models.user_model import UserInfo, User
 from views.base.base_views import AuthBaseHandler
+from conf.db import sessions
 from common.exception import (
     ERROR_CODE_0,
+    ERROR_CODE_1000
 )
 
 
@@ -16,7 +18,10 @@ class UserHandler(AuthBaseHandler):
         user = self.current_user
         uid = self.request.arguments.get('uid', None)
         if uid:
-            user = User.query.filter_by(id=uid).first()
+            user = sessions.get(User, uid)
+            # user = User.query.filter_by(id=uid).first()
+            if not user:
+                raise ERROR_CODE_1000
         return self.http_response(ERROR_CODE_0, user.to_json())
 
     def post(self):

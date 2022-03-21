@@ -6,7 +6,6 @@ from common.exception import (
     ERROR_CODE_0,
     ERROR_CODE_1000,
     ERROR_CODE_1003,
-    ERROR_CODE_1004,
     SaoException
 )
 import jwt
@@ -27,6 +26,7 @@ class BaseHandler(RequestHandler):
         :param data: 数据体
         :return:
         """
+        self.set_status(error.getHttpStatus())
         self.finish(json.dumps({'msg': error.msg, 'code': error.code, 'data': data}))
 
     def success(self, data):

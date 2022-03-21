@@ -3,10 +3,21 @@ from sqlalchemy.orm import Query
 import datetime
 from service.utils import camel_case
 import enum
+from conf.base import PAGE_DEFAULT_LIMIT
 
 
 class ModelMixin:
     query: Query = sessions.query_property()
+
+    @classmethod
+    def paginate(cls, offset=None, limit=PAGE_DEFAULT_LIMIT, *criterion):
+        count = cls.query.filter(*criterion).count()
+        if offset:
+            results = cls.query.filter(*criterion).offset(offset).limit(limit).all()
+        else:
+            results = cls.query.filter(*criterion).limit(limit).all()
+        photos = [item.to_json() for item in results]
+        return {'total': count, 'result': photos}
 
     def to_json(self):
         """
