@@ -6,10 +6,10 @@ from common.url_router import url_wrapper, include
 class Application(web.Application):
     def __init__(self):
         handlers = url_wrapper([
-            (r'/login/', include('views.login.login_urls')),
-            (r'/user/', include('views.users.user_urls')),
-            (r'/album/', include('views.album.album_urls')),
-            (r'/common/', include('views.common.common_urls')),
+            (r'/v1/login/', include('views.login.login_urls')),
+            (r'/v1/user/', include('views.users.user_urls')),
+            (r'/v1/album/', include('views.album.album_urls')),
+            (r'/v1/common/', include('views.common.common_urls')),
         ])
         settings = dict(
             debug=True,

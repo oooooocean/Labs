@@ -9,6 +9,9 @@ from conf.base import PAGE_DEFAULT_LIMIT
 class ModelMixin:
     query: Query = sessions.query_property()
 
+    def json_exclude_columns(self) -> list:
+        return ['create_time', 'deleted']
+
     @classmethod
     def paginate(cls, offset=None, limit=PAGE_DEFAULT_LIMIT, *criterion):
         count = cls.query.filter(*criterion).count()
@@ -25,8 +28,11 @@ class ModelMixin:
         :return:
         """
         json_dict = {}
+        exclude_columns = self.json_exclude_columns()
         for column in self.__table__.columns:
             name = column.name
+            if name in exclude_columns:
+                break
             key_name = camel_case(name)
             value = getattr(self, name)
             if isinstance(value, datetime.datetime):

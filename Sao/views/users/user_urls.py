@@ -1,5 +1,7 @@
-import views.users.user_views as user_views
+from views.users.user_views import UserHandler
+from views.users.user_pwd_views import UserPasswordHandler
 
 urls = [
-    (r'', user_views.UserHandler)
+    (r'([0-9]+)', UserHandler),
+    (r'password/', UserPasswordHandler)
 ]

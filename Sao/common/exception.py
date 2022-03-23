@@ -7,6 +7,7 @@ class SaoException(Exception):
         1000: ht.UNAUTHORIZED,  # 401
         1003: ht.FORBIDDEN,  # 403
         1004: ht.FORBIDDEN,
+        1006: ht.NOT_FOUND
     }
 
     def __init__(self, msg, code, detail=None):
@@ -25,3 +26,5 @@ ERROR_CODE_1002 = SaoException('验证码错误', 1002)
 ERROR_CODE_1003 = SaoException('登录过期', 1003)
 ERROR_CODE_1004 = SaoException('非法用户', 1004)
 ERROR_CODE_1005 = SaoException('数据重复', 1005)
+ERROR_CODE_1006 = SaoException('资源不存在', 1006)
+ERROR_CODE_1007 = SaoException('客户端入参错误', 1007)

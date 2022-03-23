@@ -1,74 +1,70 @@
 from views.base.base_views import AuthBaseHandler
-from common.exception import ERROR_CODE_1001, ERROR_CODE_0, ERROR_CODE_1005
-from models.album_model import Album, Photo
-from service.utils import save_images
-from conf.db import sessions
-from time import time
+from common.exception import ERROR_CODE_1001, ERROR_CODE_0, ERROR_CODE_1005, ERROR_CODE_1006
+from models.album_model import Album
 
 
 class AlbumHandler(AuthBaseHandler):
-    def get(self):
+
+    def get(self, album_id):
         """
         用户的所有相册或指定相册
         :return:
         """
-
-        id = self.get_query_argument('id', None)
-        if id:
-            album = Album.query.filter(Album.id == id).first()
-            if album:
-                self.http_response(ERROR_CODE_0, album.to_json())
-            else:
-                self.http_response(ERROR_CODE_1001)
+        if album_id:
+            album = Album.query.filter(Album.id == album_id, not Album.deleted).first()
+            assert album, 'album 不存在: %r' % album_id
+            self.http_response(ERROR_CODE_0, album.to_json())
         else:
-            albums = Album.query.filter(Album.user_id == self.current_user.id).all()
+            albums = Album.query.filter(Album.user_id == self.current_user.id, not Album.deleted).all()
             albums_json = [album.to_json() for album in albums]
             self.http_response(ERROR_CODE_0, albums_json)
 
-    def post(self):
+    def post(self, album_id):
         """
-        修改相册
+        新增/修改相册
         :return:
         """
-        try:
-            album_id = self.json_args['album_id']
-            name = self.json_args['name']
-        except Exception:
-            raise ERROR_CODE_1001
+        name = self.json_args.get('name', None)
+        assert name, '参数缺失: name'
+        if album_id:
+            self.update(name, album_id)
         else:
-            album = Album.query.filter(Album.id == album_id).first()
-            if not album:
-                raise ERROR_CODE_1001
-            album.name = name
-            album.save()
-            self.http_response(ERROR_CODE_0, album.id)
+            self.add(name)
 
-    def put(self):
+    def add(self, name):
         """
         新增
+        :param name:
         :return:
         """
-        try:
-            name = self.json_args['name']
-        except Exception:
-            raise ERROR_CODE_1001
-        else:
-            exist = Album.query.filter(Album.user_id == self.current_user.id, Album.name == name).limit(1)
-            if exist:
-                raise ERROR_CODE_1005
-            album = Album(name=name, user_id=self.current_user.id, create_time=int(time()))
-            album.save()
-            self.http_response(ERROR_CODE_0, album.id)
+        album = Album.query.filter(Album.user_id == self.current_user.id,
+                                   Album.name == name,
+                                   not Album.deleted).first()
+        assert not album, '相册已存在: %r' % name
+        album = Album(name=name, user_id=self.current_user.id)
+        album.save()
+        self.http_response(ERROR_CODE_0, album.id)
 
-    def delete(self):
+    def update(self, name, album_id):
+        """
+        修改
+        :param name:
+        :param album_id:
+        :return:
+        """
+        album = Album.query.filter(Album.id == album_id, not Album.deleted).first()
+        assert album, '相册不存在: %r' % name
+        album.name = name
+        album.save()
+        self.http_response(ERROR_CODE_0, album.id)
+
+    def delete(self, album_id):
         """
         删除
         :return:
         """
-        try:
-            album_id = self.json_args.get['id']
-        except Exception:
-            raise ERROR_CODE_1001
-        else:
-            Album.query.filter(Album.id == album_id).delete()
-            self.http_response(ERROR_CODE_0)
+        assert album_id, '参数缺失: album_id'
+        album = Album.query.filter(Album.id == album_id).first()
+        album.deleted = True
+        album.save()
+        self.http_response(ERROR_CODE_0)

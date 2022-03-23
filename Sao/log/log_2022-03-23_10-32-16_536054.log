@@ -1,0 +1,68 @@
+2022-03-23 10:32:21.996 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fec549f1970>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fec549f1970>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fec549f1970>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 15, in post
+    assert phone and code, '手机号或验证码不能为空'
+           │         └ '123456'
+           └ None
+
+AssertionError: 手机号或验证码不能为空
+2022-03-23 10:32:29.892 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fec549f1a30>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fec549f1a30>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fec549f1a30>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 15, in post
+    assert phone and code, '手机号或验证码不能为空'
+           │         └ '123456'
+           └ None
+
+AssertionError: 手机号或验证码不能为空
+2022-03-23 10:32:42.259 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fec549f1a00>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fec549f1a00>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fec549f1a00>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 15, in post
+    assert phone and code, '手机号或验证码不能为空'
+           │         └ '123456'
+           └ None
+
+AssertionError: 手机号或验证码不能为空
+2022-03-23 10:33:03.456 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fec549f1a90>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fec549f1a90>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fec549f1a90>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 15, in post
+    assert phone and code, '手机号或验证码不能为空'
+           │         └ '123456'
+           └ None
+
+AssertionError: 手机号或验证码不能为空

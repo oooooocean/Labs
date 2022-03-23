@@ -1,0 +1,78 @@
+2022-03-23 14:16:45.536 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    "phone": "18856931381",\n    "password": "zhenzhima"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fd829301e20>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fd829301e20>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fd829301e20>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 22, in post
+    self._login_with_password(phone, password)
+    │    │                    │      └ 'zhenzhima'
+    │    │                    └ '18856931381'
+    │    └ <function LoginHandler._login_with_password at 0x7fd8292d9310>
+    └ <views.login.login_views.LoginHandler object at 0x7fd829301e20>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 38, in _login_with_password
+    assert validate_password(user.password, password), '密码错误'
+           │                 │    │         └ 'zhenzhima'
+           │                 │    └ <sqlalchemy.orm.attributes.InstrumentedAttribute object at 0x7fd829253860>
+           │                 └ <models.user_model.User object at 0x7fd82939fb20>
+           └ <function validate_password at 0x7fd8292d91f0>
+
+AssertionError: 密码错误
+2022-03-23 14:17:00.729 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    "phone": "18856931381",\n    "password": "chenzhima"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fd829301f40>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fd829301f40>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fd829301f40>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 22, in post
+    self._login_with_password(phone, password)
+    │    │                    │      └ 'chenzhima'
+    │    │                    └ '18856931381'
+    │    └ <function LoginHandler._login_with_password at 0x7fd8292d9310>
+    └ <views.login.login_views.LoginHandler object at 0x7fd829301f40>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 38, in _login_with_password
+    assert validate_password(user.password, password), '密码错误'
+           │                 │    │         └ 'chenzhima'
+           │                 │    └ <sqlalchemy.orm.attributes.InstrumentedAttribute object at 0x7fd829253860>
+           │                 └ <models.user_model.User object at 0x7fd82939fb20>
+           └ <function validate_password at 0x7fd8292d91f0>
+
+AssertionError: 密码错误
+2022-03-23 14:17:48.400 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    "phone": "18856931381",\n    "password": "chenzhima"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fd82939bd00>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fd82939bd00>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fd82939bd00>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 22, in post
+    self._login_with_password(phone, password)
+    │    │                    │      └ 'chenzhima'
+    │    │                    └ '18856931381'
+    │    └ <function LoginHandler._login_with_password at 0x7fd8292d9310>
+    └ <views.login.login_views.LoginHandler object at 0x7fd82939bd00>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 38, in _login_with_password
+    assert validate_password(user.password, password), '密码错误'
+           │                 │    │         └ 'chenzhima'
+           │                 │    └ <sqlalchemy.orm.attributes.InstrumentedAttribute object at 0x7fd829253860>
+           │                 └ <models.user_model.User object at 0x7fd82939fb20>
+           └ <function validate_password at 0x7fd8292d91f0>
+
+AssertionError: 密码错误

@@ -3,10 +3,12 @@ from sqlalchemy import (
     Column,
     Integer,
     String,
-    ForeignKey
+    ForeignKey,
+    Boolean
 )
 from sqlalchemy.orm import relationship
 from models.base_model import ModelMixin
+from time import time
 
 
 class Album(conf.db.BaseDB, ModelMixin):
@@ -14,7 +16,8 @@ class Album(conf.db.BaseDB, ModelMixin):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(255), nullable=False)
-    create_time = Column(Integer, nullable=False)
+    create_time = Column(Integer, default=int(time()), nullable=False)
+    deleted = Column(Boolean, default=False, nullable=False)
 
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship('User', back_populates='albums')
@@ -27,7 +30,8 @@ class Photo(conf.db.BaseDB, ModelMixin):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(255), nullable=False)
-    create_time = Column(Integer, nullable=False)
+    create_time = Column(Integer, default=int(time()), nullable=False)
+    deleted = Column(Boolean, default=False, nullable=False)
 
     album_id = Column(Integer, ForeignKey('album.id'))
     album = relationship('Album', back_populates='photos')

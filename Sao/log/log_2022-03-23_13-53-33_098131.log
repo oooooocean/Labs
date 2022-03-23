@@ -1,0 +1,24 @@
+2022-03-23 13:53:35.615 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n    "phone": "18856931381",\n    "password": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fc1c99eed00>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fc1c99eed00>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fc1c99eed00>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 22, in post
+    self._login_with_password(phone, password)
+    │    │                    │      └ '123456'
+    │    │                    └ '18856931381'
+    │    └ <function LoginHandler._login_with_password at 0x7fc1c99c7310>
+    └ <views.login.login_views.LoginHandler object at 0x7fc1c99eed00>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 37, in _login_with_password
+    assert user.password, '用户密码不存在, 请先设置密码'
+           │    └ <sqlalchemy.orm.attributes.InstrumentedAttribute object at 0x7fc1c992a810>
+           └ <models.user_model.User object at 0x7fc1c9a8de50>
+
+AssertionError: 用户密码不存在, 请先设置密码
