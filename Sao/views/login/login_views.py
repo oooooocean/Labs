@@ -5,6 +5,7 @@ from service.utils import check_code
 from loguru import logger
 from common.exception import ERROR_CODE_1001
 from service.password import validate_password
+from service.validator import validate_phone
 
 
 class LoginHandler(BaseHandler):
@@ -16,7 +17,7 @@ class LoginHandler(BaseHandler):
         password = self.json_args.get('password', None)
         code = self.json_args.get('code', None)
 
-        assert phone, '手机号不能为空'
+        assert validate_phone(phone), '手机号不正确'
 
         if password:
             self._login_with_password(phone, password)
@@ -32,6 +33,8 @@ class LoginHandler(BaseHandler):
         :param password:
         :return:
         """
+        isValid, msg = validate_password(password)
+        assert isValid, msg
         user = User.query.filter_by(phone=phone).first()
         assert user, '用户不存在'
         assert user.password, '用户密码不存在, 请先设置密码'

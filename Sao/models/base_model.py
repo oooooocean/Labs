@@ -50,7 +50,7 @@ class ModelMixin:
         保存对象
         :return:
         """
-        sessions.add(self)
+        sessions._add(self)
         sessions.commit()
         sessions.close()
 

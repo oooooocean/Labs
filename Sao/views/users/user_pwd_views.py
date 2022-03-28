@@ -1,5 +1,6 @@
 from views.base.base_views import AuthBaseHandler
 from service.password import encrypt_password, validate_password
+from service.validator import validate_password as vp
 
 
 class UserPasswordHandler(AuthBaseHandler):
@@ -10,8 +11,8 @@ class UserPasswordHandler(AuthBaseHandler):
         :return:
         """
         password = self.json_args.get('password', None)
-        assert password, '参数不能为空'
         assert not self.current_user.password, '已有密码'
+
         self._save_password(password)
         self.success()
 
@@ -29,5 +30,8 @@ class UserPasswordHandler(AuthBaseHandler):
         self.success()
 
     def _save_password(self, password):
+        is_valid, msg = vp(password)  # 验证新密码格式
+        assert is_valid, msg
+
         self.current_user.password = encrypt_password(password)
         self.current_user.save()

@@ -6,6 +6,7 @@ from common.exception import (
     ERROR_CODE_0,
     ERROR_CODE_1006
 )
+from service.validator import validate_user_nickname
 
 
 class UserHandler(AuthBaseHandler):
@@ -28,10 +29,19 @@ class UserHandler(AuthBaseHandler):
         修改用户信息
         :return:
         """
-
         user_info: UserInfo = self.user.info or UserInfo()
-        user_info.nickname = self.get_body_argument('nickname', user_info.nickname)
-        user_info.gender = self.get_body_argument('gender', user_info.gender)
+
+        nickname = self.get_body_argument('nickname', None)
+        if nickname:
+            is_valid, msg = validate_user_nickname(nickname)
+            assert is_valid, msg
+            user_info.nickname = nickname
+
+        gender = self.get_body_argument('gender', None)
+        if gender:
+            assert gender == 1 or gender == 2, '性别错误, 只能是1或2'
+            user_info.gender = gender
+
         image_mates = self.request.files.get('image', None)
         if image_mates:
             user_info.avatar = save_images(image_mates)[0]

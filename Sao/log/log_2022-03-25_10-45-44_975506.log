@@ -1,0 +1,34 @@
+2022-03-25 10:45:45.949 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n   \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fb761a0d280>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fb761a0d280>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fb761a0d280>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 21, in post
+    assert validate_phone(phone), '手机号不正确'
+           │              └ None
+           └ <function validate_phone at 0x7fb7619cf670>
+
+AssertionError: 手机号不正确
+2022-03-25 10:45:51.277 | ERROR    | conf.logger:log_request_error:16 - uid: '', requst: HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/v1/login/', version='HTTP/1.1', remote_ip='127.0.0.1'), query: '', body b'{\n   \n    "code": "123456"\n}'
+Traceback (most recent call last):
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/venv/lib/python3.9/site-packages/tornado/web.py", line 1702, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+             │       │    │            │    └ {}
+             │       │    │            └ <views.login.login_views.LoginHandler object at 0x7fb761a0d310>
+             │       │    └ []
+             │       └ <views.login.login_views.LoginHandler object at 0x7fb761a0d310>
+             └ <bound method LoginHandler.post of <views.login.login_views.LoginHandler object at 0x7fb761a0d310>>
+
+  File "/Users/qiangchen/Desktop/Labs/Sao/views/login/login_views.py", line 21, in post
+    assert validate_phone(phone), '手机号不正确'
+           │              └ None
+           └ <function validate_phone at 0x7fb7619cf670>
+
+AssertionError: 手机号不正确

@@ -1,6 +1,7 @@
 from views.base.base_views import AuthBaseHandler
 from common.exception import ERROR_CODE_1001, ERROR_CODE_0, ERROR_CODE_1005, ERROR_CODE_1006
 from models.album_model import Album
+from service.validator import validate_album_name
 
 
 class AlbumHandler(AuthBaseHandler):
@@ -25,13 +26,16 @@ class AlbumHandler(AuthBaseHandler):
         :return:
         """
         name = self.json_args.get('name', None)
-        assert name, '参数缺失: name'
-        if album_id:
-            self.update(name, album_id)
-        else:
-            self.add(name)
 
-    def add(self, name):
+        isValid, msg = validate_album_name(name)
+        assert isValid, msg
+
+        if album_id:
+            self._update(name, album_id)
+        else:
+            self._add(name)
+
+    def _add(self, name):
         """
         新增
         :param name:
@@ -45,7 +49,7 @@ class AlbumHandler(AuthBaseHandler):
         album.save()
         self.http_response(ERROR_CODE_0, album.id)
 
-    def update(self, name, album_id):
+    def _update(self, name, album_id):
         """
         修改
         :param name:
