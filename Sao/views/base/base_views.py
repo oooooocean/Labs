@@ -67,3 +67,4 @@ class AuthBaseHandler(BaseHandler):
             self.current_user = sessions.get(User, jwtPayload.uid)
             assert self.current_user, '用户不存在'
             super(AuthBaseHandler, self).prepare()
+
