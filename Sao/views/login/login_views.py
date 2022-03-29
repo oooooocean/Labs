@@ -1,3 +1,5 @@
+from abc import ABC
+
 from models.user_model import User
 from views.base.base_views import BaseHandler
 import common.jwt_utils
@@ -20,7 +22,7 @@ class LoginHandler(BaseHandler):
         assert validate_phone(phone), '手机号不正确'
 
         if password:
-            self._login_with_password(phone, password)
+            self._login_with_password(phone, password)  # 密码登录
         elif code:
             self._login_with_code(phone, code)
         else:
@@ -33,8 +35,8 @@ class LoginHandler(BaseHandler):
         :param password:
         :return:
         """
-        isValid, msg = validate_password(password)
-        assert isValid, msg
+        is_valid, msg = validate_password(password)
+        assert is_valid, msg
         user = User.query.filter_by(phone=phone).first()
         assert user, '用户不存在'
         assert user.password, '用户密码不存在, 请先设置密码'
